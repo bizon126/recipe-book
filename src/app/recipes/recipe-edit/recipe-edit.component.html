@@ -6,26 +6,27 @@
           <button
             type="submit"
             class="btn btn-success"
-            [disabled]="!recipeForm.valid">Save</button>
-          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+            [disabled]="!recipeForm.valid">Сохранить</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Сбросить</button>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Название</label>
             <input
               type="text"
               id="name"
               formControlName="name"
-              class="form-control">
+              class="form-control"
+              #name>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="imagePath">Image URL</label>
+            <label for="imagePath">URL изображения</label>
             <input
               type="text"
               id="imagePath"
@@ -37,13 +38,13 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img [src]="imagePath.value" class="img-responsive">
+          <img [src]="imagePath.value" class="img-responsive" [alt]="name">
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="description">Description</label>
+            <label for="description">Описание</label>
             <textarea
               type="text"
               id="description"
@@ -82,7 +83,7 @@
           <hr>
           <div class="row">
             <div class="col-xs-12">
-              <button type="button" class="btn btn-success" (click)="onAddIngredient()">Add Ingredient</button>
+              <button type="button" class="btn btn-success" (click)="onAddIngredient()">Добавить ингредиент</button>
             </div>
           </div>
         </div>
