@@ -117,6 +117,7 @@ export class AuthService {
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);
     }
+    console.log(errorRes);
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
         errorMessage = 'Пользователь с таким email уже зарегистрирован';
@@ -124,7 +125,7 @@ export class AuthService {
       case 'EMAIL_NOT_FOUND':
         errorMessage = 'Пользователь с таким email  не найден';
         break;
-      case 'INVALID_PASSWORD':
+      case 'INVALID_LOGIN_CREDENTIALS':
         errorMessage = 'Указан неверный пароль'
         break;
     }
